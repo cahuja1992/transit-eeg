@@ -1,11 +1,13 @@
 # TRANSIT-EEG: Transfer and Robust Adaptation for New Subjects in EEG Technology
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-red)](Transit_EEG_Publication.pdf)
+[![Paper](https://img.shields.io/badge/Paper-IEEE-blue)](https://ieeexplore.ieee.org/document/10839595)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 
 Official implementation of **TRANSIT-EEG: A Framework for Cross-Subject Classification with Subject Specific Adaptation** by Chirag Ahuja and Divyashikha Sethia.
+
+**Published in IEEE**: [View Paper](https://ieeexplore.ieee.org/document/10839595)
 
 ## 📋 Table of Contents
 
@@ -428,11 +430,15 @@ A_sparse = topk(A, k=10)
 If you use TRANSIT-EEG in your research, please cite:
 
 ```bibtex
-@article{ahuja2024transit,
+@inproceedings{ahuja2024transit,
   title={TRANSIT-EEG: A Framework for Cross-Subject Classification with Subject Specific Adaptation},
   author={Ahuja, Chirag and Sethia, Divyashikha},
-  journal={arXiv preprint},
-  year={2024}
+  booktitle={2024 IEEE International Conference on Big Data (BigData)},
+  year={2024},
+  pages={},
+  doi={10.1109/BigData62323.2024.10839595},
+  organization={IEEE},
+  url={https://ieeexplore.ieee.org/document/10839595}
 }
 ```
 

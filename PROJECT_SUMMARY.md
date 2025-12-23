@@ -260,12 +260,21 @@ LoRA: `W + ΔW ≈ W + BA` where `B ∈ R^{d×r}`, `A ∈ R^{r×d}`, `r << d`
 If you use this code, please cite:
 
 ```bibtex
-@article{ahuja2024transit,
+@inproceedings{ahuja2024transit,
   title={TRANSIT-EEG: A Framework for Cross-Subject Classification with Subject Specific Adaptation},
   author={Ahuja, Chirag and Sethia, Divyashikha},
-  year={2024}
+  booktitle={2024 IEEE International Conference on Big Data (BigData)},
+  year={2024},
+  pages={},
+  doi={10.1109/BigData62323.2024.10839595},
+  organization={IEEE},
+  url={https://ieeexplore.ieee.org/document/10839595}
 }
 ```
+
+**Published in**: IEEE International Conference on Big Data (BigData) 2024
+**DOI**: 10.1109/BigData62323.2024.10839595
+**URL**: https://ieeexplore.ieee.org/document/10839595
 
 ## License
 

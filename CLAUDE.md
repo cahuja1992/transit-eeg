@@ -380,10 +380,18 @@ rm -rf results/
 
 ## 📚 Additional Resources
 
-- [Paper PDF](Transit_EEG_Publication.pdf)
+- [Published Paper (IEEE)](https://ieeexplore.ieee.org/document/10839595)
 - [SEED Dataset Documentation](http://bcmi.sjtu.edu.cn/~seed/seed.html)
 - [PyTorch Geometric Documentation](https://pytorch-geometric.readthedocs.io/)
 - [Diffusion Models Tutorial](https://arxiv.org/abs/2006.11239)
+
+## 📖 Publication Details
+
+**Title**: TRANSIT-EEG: A Framework for Cross-Subject Classification with Subject Specific Adaptation  
+**Authors**: Chirag Ahuja, Divyashikha Sethia  
+**Conference**: 2024 IEEE International Conference on Big Data (BigData)  
+**DOI**: 10.1109/BigData62323.2024.10839595  
+**URL**: https://ieeexplore.ieee.org/document/10839595
 
 ## 💡 Tips for Best Results
 
