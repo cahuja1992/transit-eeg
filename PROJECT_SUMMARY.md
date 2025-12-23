@@ -10,7 +10,7 @@ This repository contains the complete implementation of the TRANSIT-EEG framewor
 
 ### 1. Documentation
 - ✅ Comprehensive README.md with full paper methodology
-- ✅ CLAUDE.md with detailed setup and execution guide
+- ✅ SETUP_GUIDE.md with detailed setup and execution guide
 - ✅ Requirements.txt with all dependencies
 - ✅ Configuration files (YAML) for all experiments
 
@@ -54,7 +54,7 @@ This repository contains the complete implementation of the TRANSIT-EEG framewor
 ```
 transit-eeg/
 ├── README.md                     ✅ Complete
-├── CLAUDE.md                     ✅ Setup guide
+├── SETUP_GUIDE.md                     ✅ Setup guide
 ├── requirements.txt              ✅ All dependencies
 ├── train.py                      ✅ Phase 1 training
 ├── finetune.py                   ⏳ Phase 2 (TODO)
@@ -168,7 +168,7 @@ python finetune.py --config configs/seed_finetune.yaml --checkpoint checkpoints/
 python evaluate.py --checkpoint checkpoints/finetuned/subject_0.pt --subject 0
 ```
 
-See CLAUDE.md for detailed instructions.
+See SETUP_GUIDE.md for detailed instructions.
 
 ## Key Features
 

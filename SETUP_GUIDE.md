@@ -1,6 +1,6 @@
 # TRANSIT-EEG Setup and Execution Guide
 
-This document provides step-by-step instructions for setting up and running the TRANSIT-EEG framework.
+This document provides comprehensive step-by-step instructions for setting up and running the TRANSIT-EEG framework. Whether you're a researcher wanting to reproduce our results or a developer looking to extend the framework, this guide will help you get started.
 
 ## 📋 Prerequisites
 

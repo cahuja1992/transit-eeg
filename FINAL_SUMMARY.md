@@ -111,7 +111,7 @@ Phase 2 LoRA finetuning configuration including:
 - ✅ Use cases and troubleshooting
 - ✅ **Updated with IEEE publication details**
 
-#### **CLAUDE.md** (9,100+ bytes)
+#### **SETUP_GUIDE.md** (9,100+ bytes)
 - ✅ Step-by-step installation instructions
 - ✅ Data preparation for SEED and PhyAat datasets
 - ✅ Training/finetuning/evaluation command examples
@@ -146,7 +146,7 @@ Complete dependency list including:
 ```
 transit-eeg/
 ├── README.md                     ✅ 13KB - Main documentation
-├── CLAUDE.md                     ✅ 9KB - Setup guide
+├── SETUP_GUIDE.md                     ✅ 9KB - Setup guide
 ├── PROJECT_SUMMARY.md            ✅ 8KB - Status tracker
 ├── requirements.txt              ✅ Complete dependencies
 ├── train.py                      ✅ 16KB - Phase 1 training
