@@ -1,0 +1,84 @@
+# Configuration for SEED Dataset Pretraining (Phase 1)
+# TRANSIT-EEG Framework
+
+# Dataset Configuration
+dataset:
+  name: "SEED"
+  path: "./data/SEED/processed"
+  num_subjects: 15
+  channels: 62
+  num_classes: 3
+  sampling_rate: 200
+  window_size: 265
+  frequency_bands: 5
+
+# IDPM Configuration (Data Augmentation)
+idpm:
+  n_steps: 1000
+  beta_schedule: "linear"
+  aug_factor: 1.5  # Generate 50% more samples
+  arc_in: 200
+  arc_out: 15  # Number of subjects for subject classifier
+  
+# SOGAT Model Configuration
+model:
+  name: "SOGAT"
+  channels: 62
+  num_classes: 3
+  topk: 10  # Top-k connections in graph
+  dropout: 0.1
+  hidden_channels: [32, 64, 128]
+  graph_layers: 3
+
+# Training Configuration
+training:
+  epochs: 100
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  optimizer: "Adam"
+  scheduler:
+    type: "CosineAnnealingLR"
+    T_max: 100
+    eta_min: 1.0e-6
+  
+  # Validation
+  validation_split: 0.2
+  val_frequency: 1  # Validate every N epochs
+  
+  # Early stopping
+  early_stopping:
+    enabled: true
+    patience: 15
+    min_delta: 0.001
+  
+  # Checkpointing
+  save_frequency: 5
+  save_best_only: true
+
+# LOSO (Leave-One-Subject-Out) Configuration
+loso:
+  enabled: true
+  num_folds: 15  # One for each subject
+
+# Hardware Configuration
+hardware:
+  device: "cuda"  # cuda or cpu
+  num_workers: 4
+  pin_memory: true
+  mixed_precision: true  # Use automatic mixed precision
+
+# Logging Configuration
+logging:
+  log_dir: "./logs/seed_pretrain"
+  tensorboard: true
+  wandb:
+    enabled: false
+    project: "transit-eeg"
+    entity: null
+  save_predictions: true
+  save_embeddings: false
+
+# Reproducibility
+seed: 42
+deterministic: true

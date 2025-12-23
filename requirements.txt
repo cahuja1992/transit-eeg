@@ -1,0 +1,66 @@
+# Core Dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.24.0
+scipy>=1.10.0
+
+# PyTorch Geometric for Graph Neural Networks
+torch-geometric>=2.3.0
+torch-scatter>=2.1.0
+torch-sparse>=0.6.17
+torch-cluster>=1.6.1
+torch-spline-conv>=1.2.2
+
+# Data Processing
+pandas>=2.0.0
+h5py>=3.8.0
+mne>=1.4.0  # For EEG data processing
+scikit-learn>=1.3.0
+
+# Signal Processing
+pywavelets>=1.4.1
+antropy>=0.1.6  # For entropy calculations
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# Configuration Management
+pyyaml>=6.0
+hydra-core>=1.3.0
+omegaconf>=2.3.0
+
+# Logging and Monitoring
+tensorboard>=2.13.0
+wandb>=0.15.0
+tqdm>=4.65.0
+
+# Utilities
+jupyter>=1.0.0
+ipython>=8.12.0
+notebook>=6.5.4
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Code Quality
+black>=23.3.0
+flake8>=6.0.0
+isort>=5.12.0
+mypy>=1.4.0
+
+# Documentation
+sphinx>=7.0.0
+sphinx-rtd-theme>=1.2.0
+
+# For IDPM/Diffusion Models
+einops>=0.6.1
+
+# Optional: Accelerated training
+# nvidia-cuda-runtime-cu11>=11.8  # If using CUDA 11.8
+# nvidia-cudnn-cu11>=8.6  # If using cuDNN
+
+# Optional: Mixed precision training
+# apex  # For advanced mixed precision (install separately from NVIDIA)

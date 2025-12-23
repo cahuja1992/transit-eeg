@@ -1,14 +1,28 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import math
 from torch import Tensor
 from torch.nn import Parameter
 from torch.nn import Linear, Dropout, Conv2d, MaxPool2d
 from torch_geometric.utils import to_dense_batch
 
-device = torch.device('cuda', 0)
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 from typing import Optional
+
+
+def glorot(tensor):
+    """Glorot/Xavier uniform initialization."""
+    if tensor is not None:
+        stdv = math.sqrt(6.0 / (tensor.size(-2) + tensor.size(-1)))
+        tensor.data.uniform_(-stdv, stdv)
+
+
+def zeros(tensor):
+    """Zero initialization."""
+    if tensor is not None:
+        tensor.data.fill_(0)
 
 class AdapterLayer(nn.Module):
     """
@@ -106,7 +120,7 @@ class DenseGATConv(nn.Module):
         self.dropout = dropout
         self.adapter = adapter
 
-        self.lin = Linear(in_channels, heads * out_channels, bias=False, weight_initializer='glorot')
+        self.lin = Linear(in_channels, heads * out_channels, bias=False)
         self.att_src = Parameter(torch.empty(1, 1, heads, out_channels), requires_grad=True)
         self.att_dst = Parameter(torch.empty(1, 1, heads, out_channels), requires_grad=True)
 

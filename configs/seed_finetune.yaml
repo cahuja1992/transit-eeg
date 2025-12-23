@@ -1,0 +1,58 @@
+# Configuration for SEED Dataset Finetuning (Phase 2)
+# TRANSIT-EEG Framework - LoRA Adaptation
+
+# Inherit from pretrain config for base settings
+base_config: "seed_pretrain.yaml"
+
+# Finetuning Configuration
+finetuning:
+  mode: "lora"  # Options: "full", "head_only", "adapter", "lora"
+  epochs: 20
+  batch_size: 32
+  learning_rate: 0.0001  # Lower learning rate for finetuning
+  
+  # LoRA specific settings
+  lora:
+    rank: 8  # Low-rank dimension
+    alpha: 16  # Scaling factor
+    dropout: 0.1
+    target_modules: ["att_src", "att_dst"]  # Which modules to adapt
+  
+  # Data augmentation during finetuning
+  use_idpm: true
+  aug_factor: 5.0  # 5x augmentation for few-shot scenario
+  
+  # Few-shot settings
+  num_support_samples: 21  # Half of one session (50% of ~42 trials)
+  num_query_samples: 21  # Other half for evaluation
+
+# Freeze base model layers
+freeze_base: true
+freeze_graph_construction: false
+
+# Training Configuration (override pretrain settings)
+training:
+  epochs: 20
+  batch_size: 32
+  learning_rate: 0.0001
+  optimizer: "AdamW"
+  scheduler:
+    type: "StepLR"
+    step_size: 5
+    gamma: 0.5
+  
+  early_stopping:
+    enabled: true
+    patience: 10
+    min_delta: 0.0005
+
+# Subject-specific settings
+subject:
+  id: null  # Set at runtime
+  session_split: 0.5  # Use 50% for support, 50% for query
+
+# Logging
+logging:
+  log_dir: "./logs/seed_finetune"
+  save_adapted_model: true
+  save_frequency: 5
